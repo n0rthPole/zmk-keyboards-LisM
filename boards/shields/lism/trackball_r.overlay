@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include "lism.dtsi"
+#include <scroll-snap.dtsi>
 
 &spi0 {
     status = "okay";
@@ -29,7 +30,7 @@
         layers = <2>;
         input-processors = 
             <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
-//            <&zip_scroll_snap>,                                 //スクロールスナップ
+            <&zip_scroll_snap>,                                 //スクロールスナップ
             <&zip_scroll_scaler 1 16>;                          //スクロール量を1/16倍
     };
 };
