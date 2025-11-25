@@ -29,7 +29,7 @@
         layers = <2>;
         input-processors = 
             <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
-            <&zip_scroll_snap>,                                 //スクロールスナップ
+//            <&zip_scroll_snap>,                                 //スクロールスナップ
             <&zip_scroll_scaler 1 16>;                          //スクロール量を1/16倍
     };
 };
