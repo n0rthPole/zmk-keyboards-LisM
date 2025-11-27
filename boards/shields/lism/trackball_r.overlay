@@ -32,6 +32,9 @@
             <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
             <&zip_scroll_snap>,                                 //スクロールスナップ
             <&zip_scroll_scaler 1 16>;                          //スクロール量を1/16倍
-            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;   // スクロールの左右反転
+            <&scroll_inverter>;                                 // ← カスタムノードを呼ぶ
+
+        scroll_inverter: zip_scroll_transform {
+            transform = <INPUT_TRANSFORM_X_INVERT>;
     };
 };
