@@ -2,6 +2,21 @@
 #include "lism.dtsi"
 #include <scroll-snap.dtsi>
 
+
+&zip_temp_layer {
+    excluded-positions = <
+        18 // J
+        19 // K
+        21 // ;
+        34 // Ctrl
+    >;
+};
+
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+};
+
+
 &spi0 {
     status = "okay";
 
@@ -15,6 +30,7 @@
     };
 };
 
+
 // 左（split経由）のリスナーを有効化
 &left_listener {
     status = "okay";
@@ -26,6 +42,7 @@
     device = <&tb_right>;
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+        <&zip_temp_layer 6 10000>;
 
     scroller {
         layers = <2>;
