@@ -2,6 +2,15 @@
 #include "lism.dtsi"
 #include <scroll-snap.dtsi>
 
+&zip_temp_layer {
+    excluded-positions = <
+        17 // K
+        18 // L
+        20 // Shift
+        30 // Ctrl
+    >;
+};
+
 &spi0 {
     status = "okay";
 
