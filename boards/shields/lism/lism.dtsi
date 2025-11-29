@@ -3,6 +3,17 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
 
+&zip_temp_layer {
+    excluded-positions = <
+        17 // K
+        18 // L
+    >;
+};
+
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+};
+
 / {
     chosen {
         zmk,kscan = &kscan0;
